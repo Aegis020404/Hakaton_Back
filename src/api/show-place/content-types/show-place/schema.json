@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "show_places",
+  "info": {
+    "singularName": "show-place",
+    "pluralName": "show-places",
+    "displayName": "ShowPlace",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "Geoposition_X": {
+      "type": "string"
+    },
+    "Geoposition_Y": {
+      "type": "string"
+    },
+    "Price": {
+      "type": "integer"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "TypePlace": {
+      "type": "string"
+    },
+    "photos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "show_place_photos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::show-place-photo.show-place-photo",
+      "mappedBy": "show_place"
+    },
+    "history_show_places": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::history-show-place.history-show-place",
+      "mappedBy": "show_places"
+    },
+    "favorites_places": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::favorites-place.favorites-place",
+      "mappedBy": "show_places"
+    },
+    "quest_show_place": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::quest-show-place.quest-show-place",
+      "inversedBy": "show_places"
+    }
+  }
+}

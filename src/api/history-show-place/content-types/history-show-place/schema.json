@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "history_show_places",
+  "info": {
+    "singularName": "history-show-place",
+    "pluralName": "history-show-places",
+    "displayName": "HistoryShowPlace"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "people": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::person.person",
+      "inversedBy": "history_show_places"
+    },
+    "show_places": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::show-place.show-place",
+      "inversedBy": "history_show_places"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "history_show_places"
+    }
+  }
+}

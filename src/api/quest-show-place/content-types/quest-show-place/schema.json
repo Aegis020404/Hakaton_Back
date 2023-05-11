@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quest_show_places",
+  "info": {
+    "singularName": "quest-show-place",
+    "pluralName": "quest-show-places",
+    "displayName": "Quest_ShowPlace"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "quests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::quest.quest",
+      "mappedBy": "quest_show_place"
+    },
+    "show_places": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::show-place.show-place",
+      "mappedBy": "quest_show_place"
+    }
+  }
+}

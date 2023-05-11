@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "people",
+  "info": {
+    "singularName": "person",
+    "pluralName": "people",
+    "displayName": "Person",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "phone_number": {
+      "type": "string"
+    },
+    "password": {
+      "type": "password"
+    },
+    "login": {
+      "type": "string"
+    },
+    "xp": {
+      "type": "biginteger"
+    },
+    "history_show_places": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::history-show-place.history-show-place",
+      "mappedBy": "people"
+    },
+    "favorites_places": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::favorites-place.favorites-place",
+      "mappedBy": "people"
+    },
+    "achivments_people": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::achivments-person.achivments-person",
+      "mappedBy": "people"
+    }
+  }
+}

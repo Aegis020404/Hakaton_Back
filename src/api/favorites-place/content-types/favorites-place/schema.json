@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "favorites_places",
+  "info": {
+    "singularName": "favorites-place",
+    "pluralName": "favorites-places",
+    "displayName": "Favorites_Place"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "show_places": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::show-place.show-place",
+      "inversedBy": "favorites_places"
+    },
+    "people": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::person.person",
+      "inversedBy": "favorites_places"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "favorites_places"
+    }
+  }
+}
